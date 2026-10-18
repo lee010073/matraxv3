@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0c0b09;
+  --foreground: #f4efe6;
+  --muted: #9a9186;
+  --surface: #161411;
+  --surface-2: #1e1b16;
+  --border: #2c2820;
+  --accent: #e8b86d;
+  --accent-ink: #2a1f0b;
+  --keep: #3dd68c;
+  --kill: #f07167;
+  --card: #1a1712;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-keep: var(--keep);
+  --color-kill: var(--kill);
+  --color-card: var(--card);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(232, 184, 109, 0.08), transparent 50%),
+    radial-gradient(900px 500px at 110% 0%, rgba(61, 214, 140, 0.05), transparent 45%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(232, 184, 109, 0.35);
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-in {
+  animation: card-in 220ms ease-out;
+}
